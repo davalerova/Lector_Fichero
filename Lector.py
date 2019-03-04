@@ -1,6 +1,9 @@
+from tkinter import *
+from tkinter import filedialog as FileDialog
 from io import open
 
-archivo=open("Archivo.txt","r")
+ruta=FileDialog.askopenfilename(initialdir='.', filetype=(("Ficheros de texto","*.txt"),),title="Abrir un fichero de texto")
+archivo=open(ruta,"r")
 texto =archivo.readlines()
 archivo.close()
 lineas=len(texto)
@@ -12,4 +15,4 @@ for i in texto:
 for i in palabras:
     numLetras+=len(i)
 numPalabras+=len(palabras)
-print("El archivo tiene: ",lineas," líneas, ",numPalabras," palabras y",numLetras, " letras")
+print("El archivo tiene: ",lineas," lineas, ",numPalabras," palabras y",numLetras, " letras")
