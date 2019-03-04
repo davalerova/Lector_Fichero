@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import filedialog as FileDialog
 from io import open
-
 ruta=FileDialog.askopenfilename(initialdir='.', filetype=(("Ficheros de texto","*.txt"),),title="Abrir un fichero de texto")
 archivo=open(ruta,"r")
 texto =archivo.readlines()
